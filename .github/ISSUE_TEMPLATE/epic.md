@@ -5,8 +5,6 @@ title: ''
 labels: 'type: epic'
 assignees: ''
 
----
-
 body:
 - type: input
   id: themes
@@ -38,7 +36,3 @@ body:
     description: "The high level list of requirements the team will need to approve, i.e. acceptance criteria."
   validations:
     required: true
-
-# Description
-
-
