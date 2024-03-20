@@ -1,4 +1,3 @@
----
 name: Epic
 about: Create an epic to document the development team's understanding of customer's needs and requirements.
 title: ''
