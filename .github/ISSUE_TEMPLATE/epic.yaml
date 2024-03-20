@@ -1,8 +1,7 @@
 name: Epic
 about: Create an epic to document the development team's understanding of customer's needs and requirements.
-title: ''
-labels: 'type: epic'
-assignees: ''
+title: "[Epic]: "
+labels: ["type: epic"]
 
 body:
 - type: input
