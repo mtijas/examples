@@ -8,7 +8,7 @@ body:
   id: themes
   attributes:
     label: Themes
-    description: "The themes this epic is related to"
+    description: "Themes this epic is related to"
 - type: input
   id: project
   attributes:
