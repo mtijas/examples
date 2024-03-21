@@ -1,0 +1,13 @@
+name: Bug report
+description: "A bug."
+labels: ["type: bug"]
+
+body:
+- type: textarea
+  id: code
+  attributes:
+    label: Code
+    description: "Enter code here"
+    render: yaml
+  validations:
+    required: true
