@@ -1,4 +1,4 @@
-name: Monthly issue metrics
+name: 180d issue metrics
 on:
   workflow_dispatch:
 
@@ -13,11 +13,24 @@ jobs:
       issues: write
       pull-requests: read
     steps:
+      - name: Get dates for last 180 days
+        shell: bash
+        run: |
+          # Calculate the first day
+          first_day=$(date -d "-180 day" +%Y-%m-%d)
+
+          # Calculate the last day
+          last_day=$(date -d "-1 day" +%Y-%m-%d)
+
+          #Set an environment variable with the date range
+          echo "$first_day..$last_day"
+          echo "timeframe=$first_day..$last_day" >> "$GITHUB_ENV"
+          
       - name: Run issue-metrics tool
         uses: github/issue-metrics@v3
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          SEARCH_QUERY: 'repo:mtijas/examples is:issue created:2024-01-01..2025-08-25 -reason:"not planned"'
+          SEARCH_QUERY: 'repo:mtijas/examples is:issue created:${{ env.timeframe }} -reason:"not planned"'
 
       - name: Create issue
         uses: peter-evans/create-issue-from-file@v5
